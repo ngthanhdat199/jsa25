@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Example flex</h1>
+    <!-- Example display flex that not the same height have 3 rows, each rows have two column have gap between each (do not use grid) -->
+    <div style="display: flex; gap: 10px;">
+        <div style="background-color: red; width: 50%; height: 100px;">1</div>
+        <div style="background-color: blue; width: 50%; height: 200px;">2</div>
+    </div>
+    <div style="display: flex; gap: 10px;  margin-top: 10px;">
+        <div style="background-color: green; width: 50%; height: 200px;">3</div>
+        <div style="background-color: yellow; width: 50%; height: 200px;">4</div>
+    </div>
+    <div style="display: flex; gap: 10px;  margin-top: 10px;">
+        <div style="background-color: pink; width: 50%; height: 200px;">5</div>
+        <div style="background-color: purple; width: 50%; height: 100px;">6</div>
+    </div>
+
+    <h1>Example grid</h1>
+    <!-- Example display grid that have the same height have 3 rows, each rows have two column have gap between each (use grid) -->
+    <div class="grid">
+        <div style="background-color: red;">1</div>
+        <div style="background-color: blue;">2</div>
+        <div style="background-color: green;">3</div>
+        <div style="background-color: yellow;">4</div>
+        <div style="background-color: pink;">5</div>
+        <div style="background-color: purple;">6</div>
+    </div>
+
+    <h1>Introduce grid</h1>
+    <div class="grid_introduce">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <h1>Grid placement</h1>
+    <div class="grid_placement">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+    </div>
+
+    <h1>Mondrian-style painting</h1>
+    <div class="grid_painting">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item4"></div>
+        <div class="item item5"></div>
+        <div class="item item6"></div>
+        <div class="item item7"></div>
+        <div class="item item8"></div>
+        <div class="item item9"></div>
+        <div class="item item10"></div>
+        <div class="item item11"></div>
+        <div class="item item12"></div>
+        <div class="item item13"></div>
+        <div class="item item14"></div>
+    </div>
+</body>
+</html>
