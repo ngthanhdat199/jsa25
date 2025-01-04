@@ -78,17 +78,17 @@ import { TMDB_API_KEY } from "./config.js";
 
   // document.querySelector(".backdrop").classList.add("backdrop-hidden");
 
-  Object.keys(data).map((key, index) => {
-    new Swiper(`.swiper-${index}`, {
-      spaceBetween: 30,
-      autoplay: { delay: 5000, disableOnInteraction: true },
-      slidesPerView: "auto",
-      loop: true,
-      slidesPerGroupAuto: true,
-      navigation: {
-        prevEl: `.swiper-button-prev`,
-        nextEl: `.swiper-button-next`,
-      },
-    });
-  });
+  // Object.keys(data).map((key, index) => {
+  //   new Swiper(`.swiper-${index}`, {
+  //     spaceBetween: 30,
+  //     autoplay: { delay: 5000, disableOnInteraction: true },
+  //     slidesPerView: "auto",
+  //     loop: true,
+  //     slidesPerGroupAuto: true,
+  //     navigation: {
+  //       prevEl: `.swiper-button-prev`,
+  //       nextEl: `.swiper-button-next`,
+  //     },
+  //   });
+  // });
 })();

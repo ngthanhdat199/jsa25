@@ -69,57 +69,64 @@ const labels = ["data", "casts", "similar"];
 
   if (result.casts) {
     document.querySelector(".casts-grid").innerHTML = result.casts
-      .map(
-        (item) => /*html*/ `
-          <div>
-            <img
-              onload="this.style.opacity = '1'"
-              class="fade-in"
-              src="https://image.tmdb.org/t/p/w200${item.profile_path}"
-              alt=""
-            />
-            <p style="text-align: center">${item.name}</p>
-            <p style="text-align: center; color: var(--orange)">${item.character}</p>
-          </div>
-        `
-      )
+      .map((item) => {
+        // console.log(item);
+
+        return /*html*/ `
+            <div>
+              <img
+                onload="this.style.opacity = '1'"
+                class="fade-in"
+                src="https://image.tmdb.org/t/p/w200${item.profile_path}"
+                alt=""
+              />
+              <p style="text-align: center">${item.name}</p>
+              <p style="text-align: center; color: var(--orange)">${item.character}</p>
+            </div>
+          `;
+      })
       .join("");
   }
 
-  if (result.similar && result.similar.length > 0)
-    document.querySelector("#similar").innerHTML += /*html*/ `
-  <div class="section">
-    <h2>Similar</h2>
 
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        ${result.similar
-          .map(
-            (item) => /*html*/ `
-        <a href="./info.html?id=${
-          item.id
-        }" class="swiper-slide" style="width: 200px !important">
-          <div class="movie-card">
-            <img
-              class="fade-in"
-              onload="this.style.opacity = '1'"
-              src="https://image.tmdb.org/t/p/w200${item.poster_path}"
-              alt=""
-            />
-            <p class="multiline-ellipsis-2">
-              ${item.title || item.name}
-            </p>
+  if (result.similar && result.similar.length > 0) {
+    const similarItemsHTML = result.similar
+      .map((item) => {
+        // console.log("Similar Item:", item);
+
+        return /*html*/ `
+          <a href="./info.html?id=${item.id
+          }" class="swiper-slide" style="width: 200px !important">
+            <div class="movie-card">
+              <img
+                class="fade-in"
+                onload="this.style.opacity = '1'"
+                src="https://image.tmdb.org/t/p/w200${item.poster_path}"
+                alt=""
+              />
+              <p class="multiline-ellipsis-2">
+                ${item.title || item.name}
+              </p>
+            </div>
+          </a>
+        `;
+      })
+      .join("\n");
+
+    document.querySelector("#similar").innerHTML += /*html*/ `
+      <div class="section">
+        <h2>Similar</h2>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            ${similarItemsHTML}
           </div>
-        </a>
-      `
-          )
-          .join("\n")} 
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </div>
-  `;
+    `;
+  }
+
 
   new Swiper(`.swiper`, {
     spaceBetween: 30,
